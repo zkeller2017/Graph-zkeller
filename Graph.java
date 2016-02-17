@@ -1,7 +1,19 @@
 import java.util.ArrayList;
 import java.lang.Math;
+/**
+	This incredibly rudimentary Graph class runs a greedy algorithm on the
+	traveling salesman problem. It was made primarily to test the functionality of the 
+	vertex and edge classes.
+	@author Zachary Keller
+	@version final
+*/
 public class Graph<E>
 {
+	/**
+		The main method creates new vertices and connects them
+		all to each other with random weights, then calls the recursive
+		run method.
+	*/
 	public static void main(String[] args)
 	{
 		Vertex<String> v1 = new Vertex<String>("first");
@@ -31,7 +43,10 @@ public class Graph<E>
 		run(v1);
 
 	}
-	
+	/**
+		This method travels through all the vertices until it hits a vertex that it has
+		already visited. This is the basic greedy solution to the traveling salesman problem.
+	*/
 	public static void run(Vertex<String> v)
 	{
 		if (v.wasVisited())
